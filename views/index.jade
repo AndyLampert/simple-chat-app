@@ -18,11 +18,11 @@ block content
                 .well
                     | message2
 
-    div(style='padding: 100px 100px 10px;')
-    form.bs-example.bs-example-form(role='form')
-      .col-lg-6
-        .input-group
-            input.form-control(type='text')
-            span.input-group-btn
-                button.btn.btn-default(type='button')
-                    | Send!
+    div#chat-input
+        form.bs-example.bs-example-form(role='form')
+          .col-lg-6
+            .input-group
+                textarea.form-control(type='text')
+                span.input-group-btn
+                    button.btn.btn-default.send-btn(type='button')
+                        | Send!

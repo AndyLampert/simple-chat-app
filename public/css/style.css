@@ -4,3 +4,24 @@
 
 body {
 }
+
+#chat-input {
+	padding: 2em;
+	background-color: lightgrey;
+	border-top: 1px solid grey;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+
+textarea.form-control {
+	resize: none;
+}
+
+.send-btn, textarea.form-control {
+	height: 50px;
+}
+
+.send-btn {
+	width: 130px;
+}
