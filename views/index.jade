@@ -1,4 +1,28 @@
 extends layout
 
 block content
-	h1 Hello Boulder!
+    .container
+        .row
+            .col-xs-6.center-block
+            h1 Andrew's Chat App
+    .container
+        .row
+            .col-xs-6.center-block
+                h4 User 1
+                h4 Sent at: time
+                .well
+                    | message1 
+            .col-xs-6.center-block
+                h4 User 2
+                h4 Sent at: time
+                .well
+                    | message2
+
+    div(style='padding: 100px 100px 10px;')
+    form.bs-example.bs-example-form(role='form')
+      .col-lg-6
+        .input-group
+            input.form-control(type='text')
+            span.input-group-btn
+                button.btn.btn-default(type='button')
+                    | Send!
