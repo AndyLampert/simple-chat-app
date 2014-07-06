@@ -1,19 +1,19 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
+var db = require('./models');
 var app = require('express')();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 io.on('connection', function(){ /* … */ });
 
-var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/my_database');
-
-// get notified if we connect successfully or if a connection error occurs
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function callback () {
-  // yay!
+// takes callback function, lets us throw error
+// message -> JSON object of everything inside that collection
+db.Message.find(function(err, messages) {
+	if (err) {
+		console.error(err);
+	} else {
+		console.log(messages);
+	}
 });
 
 app.set('view engine', 'jade');
