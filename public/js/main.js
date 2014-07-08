@@ -3,17 +3,18 @@ $(document).ready(function(){
 	// io() with no args does auto-discovery
 	var socket = io();
 	
-	// this is an example notification
+	// this is an example notification from http://www.sitepoint.com/introduction-web-notifications-api/
 	// param1 - title of the notification (string)
 	// param2 - object of settings (optional)
 	var notification = new Notification('Email received', {
 		body: 'You have a total of 3 unread emails'
 	});
 
-
 	$('#chat-input').on('click', '.send-btn', function(e){
 		console.log("input submitted");
 		e.preventDefault();
+		var userInput = $('textarea.form-control').text();
+		console.log(userInput);
 		// TODO: 
 		// get the value of text area
 		// post it to mongoose

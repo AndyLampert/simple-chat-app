@@ -16,6 +16,6 @@ var messageSchema = mongoose.Schema({
 
 // exporting just message 
 // making the message object available to whatever files reference (use require) mongoose. 
-// Specifying model, named 'Message' collect
+// Specifying model, named 'Message' collectection
 // para2 - definied with the scheme by same name above
 exports.Message = mongoose.model('Message', messageSchema);

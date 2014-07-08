@@ -22,7 +22,33 @@ block content
         form(role='form')
           .col-lg-12
             .input-group
-                textarea.form-control(type='text')
+                textarea.form-control(type='text', placeholder="input an awesome message")
                 span.input-group-btn
                     button.btn.btn-default.send-btn(type='button')
                         | Send!
+    script(type="text/javascript", src="https://cdn.socket.io/socket.io-1.0.6.js")
+
+    script.
+        var socket = io.connect('http://localhost');
+          socket.on('news', function (data) {
+            console.log(data);
+            socket.emit('my other event', { my: 'data' });
+          });
+
+    //- script.
+    //-     //- boilerplate code from http://socket.io/docs/ using the express framework section
+    //-     var socket = io.connect('http://localhost');
+    //-     var news = io.connect('http://localhost/news');
+    //-     socket.on('news', function(data){
+    //-             console.log(data);
+    //-             socket.emit('my other event', { my: 'data'});
+    //-         });
+
+    //- script.
+    //-     var socket = io('http://localhost');
+    //-     socket.on('connect', function(){
+    //-         socket.send('hi!');
+    //-         socket.on('message', function(message){
+    //-             'this is my message'
+    //-         });
+    //-     })
